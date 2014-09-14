@@ -11,8 +11,7 @@ gulp.task('stylus', function () {
   gulp.src(stylFiles)
     .pipe(stylus({
       use: [nib()],
-      set:['compress'],
-      import: ['nib']
+      set: ['compress']
     }))
     .pipe(gulp.dest('./build'));
 });
