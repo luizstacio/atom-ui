@@ -2,16 +2,16 @@ var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var jade = require('gulp-jade');
 var livereload = require('gulp-livereload');
-var nib = require('nib');
+var nib = require('./node_modules/nib');
 
-var stylFiles = ['./components/**/*.styl'];
-var jadeFiles = ['./components/**/*.jade'];
+var stylFiles = './components/**/*.styl';
+var jadeFiles = './components/**/*.jade';
 
 gulp.task('stylus', function () {
   gulp.src(stylFiles)
     .pipe(stylus({
       use: [nib()],
-      set: ['compress']
+      compress: false
     }))
     .pipe(gulp.dest('./build'));
 });
