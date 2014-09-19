@@ -1,0 +1,29 @@
+atom-button-color = #555
+atom-button-size = 0.5em
+atom-button-border = 0.1em solid #7F7F7F
+atom-button-border-radius = 0.3em
+atom-button-background = #FFFFFF
+atom-button-padding = 0.5em
+atom-label-padding = 0 0 0.2em 0
+atom-label-size = 1em
+
+[class^="atom-button-"],
+[class*="atom-button-"]
+  display inline-block
+  position relative
+  width 100%
+
+[class^="atom-button-"]:active,
+[class*="atom-button-"]:active
+  box-shadow inset 1px 1px 5px rgba(0,0,0, 0.2)
+
+.atom-button
+  width 100%
+  margin 0
+  background atom-button-background
+  border atom-button-border
+  padding atom-button-padding
+  color atom-button-color
+  font-size atom-label-size
+  border-radius atom-button-border-radius
+  cursor pointer

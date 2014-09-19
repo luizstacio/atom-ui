@@ -1,0 +1,59 @@
+@import '../default'
+
+.atom-input-select input
+  @extend .atom-input
+
+.atom-input-select input
+  position relative
+  z-index 999
+
+#checkbox:checked ~ ul
+  display block
+  opacity 1
+  transition all 2s linear
+
+#checkbox:checked ~ input
+  border-bottom 0
+  border-bottom-left-radius 0
+  border-bottom-right-radius 0
+
+.atom-input-select ul
+  display none
+  position absolute
+  z-index 998
+  width 100%
+  background atom-input-background
+  border atom-input-border
+  border-radius atom-input-border-radius
+  border-top-left-radius 0
+  border-top-right-radius 0
+  overflow-x auto
+  max-height 10em
+  box-shadow 0px 0px 8px rgba(0,0,0, 0.4)
+  opacity 0
+  margin-bottom 10px
+  transition all 2s linear
+
+.atom-input-select li
+  @extend .atom-input
+  border-radius 0
+  list-style none
+  display block
+  border none
+  cursor pointer
+  border-bottom atom-input-border
+
+.atom-input-select li:hover
+  background #ccc
+
+.atom-input-select li:active
+  box-shadow inset 0 2px 1px rgba(0,0,0, 0.1)
+
+.atom-input-select li:last-child
+  border-bottom none
+
+.atom-input-select li::selection
+  background none
+
+.atom-input-select label
+  @extend .atom-input-label

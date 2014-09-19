@@ -6,6 +6,7 @@ var nib = require('./node_modules/nib');
 
 var stylFiles = './components/**/*.styl';
 var jadeFiles = './components/**/*.jade';
+var otherFiles = './components/**/!(*.styl|*.jade)';
 
 gulp.task('stylus', function () {
   gulp.src(stylFiles)
@@ -22,11 +23,17 @@ gulp.task('jade', function () {
     .pipe(gulp.dest('./build'));
 });
 
+gulp.task('copyFiles', function () {
+  gulp.src(otherFiles)
+    .pipe(gulp.dest('./build'));
+});
+
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch(stylFiles.concat(jadeFiles), ['compile']);
+  gulp.watch(stylFiles, ['compile']);
+  gulp.watch(jadeFiles, ['compile']);
   gulp.watch('./build/**').on('change', livereload.changed);
 });
 
-gulp.task('compile', ['stylus', 'jade']);
+gulp.task('compile', ['stylus', 'jade', 'copyFiles']);
 gulp.task('default', ['watch']);

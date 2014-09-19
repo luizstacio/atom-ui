@@ -1,13 +1,33 @@
 atom-input-color = #555
 atom-input-size = 0.5em
-atom-input-border = 0.1em solid #CCC
-atom-input-border-radius = 5px
+atom-input-border = 0.1em solid #7F7F7F
+atom-input-border-radius = 0.3em
 atom-input-background = #FFFFFF
 atom-input-padding = 0.5em
 atom-label-padding = 0 0 0.2em 0
 atom-label-size = 1em
 
+[class^="atom-input-"],
+[class*="atom-input-"]
+  display inline-block
+  position relative
+  width 100%
+
+[class^="atom-input-"] *:focus,
+[class*="atom-input-"] *:focus
+  box-shadow inset 0 1px 2px rgba(0,0,0,.3), 0 0 4px rgba(102,175,233,.6)
+  border-color rgb(102,175,233) !important
+
+[class*="atom-input-"] *.error,
+[class^="atom-input-"] *:invalid
+  box-shadow inset 0 1px 2px rgba(0,0,0,.3), 0 0 4px rgba(255,0,20,.4)
+  border-color rgb(255,0,20) !important
+  outline 0
+
 .atom-input
+  width 100%
+  margin 0
+  box-shadow inset 0 1px 1px rgba(0,0,0,.1)
   background atom-input-background
   border atom-input-border
   padding atom-input-padding
@@ -20,3 +40,16 @@ atom-label-size = 1em
   font-size atom-label-size
   padding atom-label-padding
   color atom-input-color
+
+
+placeholder()
+  color atom-input-color
+
+::-webkit-input-placeholder
+  placeholder()
+:-moz-placeholder
+  placeholder()
+::-moz-placeholder
+  placeholder()
+:-ms-input-placeholder
+  placeholder()

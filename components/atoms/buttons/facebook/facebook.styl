@@ -1,0 +1,29 @@
+@import '../default.styl'
+
+@font-face
+  font-family facebook
+  src: url('../atoms/buttons/facebook/assets/icons/facebook.eot?-lzukky');
+  src: url('../atoms/buttons/facebook/assets/icons/facebook.eot?#iefix-lzukky') format('embedded-opentype'),
+       url('../atoms/buttons/facebook/assets/icons/facebook.woff?-lzukky') format('woff'),
+       url('../atoms/buttons/facebook/assets/icons/facebook.ttf?-lzukky') format('truetype'),
+       url('../atoms/buttons/facebook/assets/icons/facebook.svg?-lzukky#facebook') format('svg');
+  font-weight normal
+  font-style normal
+
+.atom-button-facebook
+  @extend .atom-button
+  background #4c66a4
+  color #FFF
+  font-size 18px
+  font-family helvetica
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+.atom-button-facebook:hover
+  background-color #395496
+
+.atom-button-facebook:before
+  content '\e600'
+  font-family facebook
+  margin 0 5px
+  vertical-align baseline
